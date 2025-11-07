@@ -5,10 +5,9 @@
 
     <script>
         function handleOnChange(e) {
-        const { checked, value, tagName, type } = e.srcElement
+            const { checked, value, tagName, type } = e.srcElement
 
-        document.querySelector("#output").textContent =
-            `${tagName}:${type}:${checked != undefined ? checked : value}`
+            document.querySelector("#output").textContent = `${tagName}:${type}:${type === 'checkbox' ? checked : value}`
         }
     </script>
 
