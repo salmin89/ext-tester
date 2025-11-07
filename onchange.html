@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <script>
+
+        function handleOnChange(e) {
+            console.log(e.srcElement)
+
+            document.querySelector('#output').textContent = `${e.srcElement.tagName}:${e.srcElement.type}`
+        }
+
+        document.querySelectorAll('#text, #checkbox').forEach(el => el.addEventListener('change', handleOnChange))
+
+
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h4,
+        h5 {
+            margin: 0rem;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>form elements</legend>
+        <form>
+            <h4>inline onchange</h4>
+            <label>
+                text
+                <input type="text" onchange="handleOnChange(event)">
+            </label>
+            <label>
+                checkbox
+                <input type="checkbox" onchange="handleOnChange(event)">
+            </label>
+
+            <hr>
+
+            <h4>eventListeners</h4>
+            <label>
+                text
+                <input type="text" id="text">
+            </label>
+            <label>
+                checkbox
+                <input type="checkbox" id="checkbox">
+            </label>
+        </form>
+    </fieldset>
+
+    <fieldset>
+        <legend>output</legend>
+        <div id="output"></div>
+    </fieldset>
+</body>
+
+</html>
