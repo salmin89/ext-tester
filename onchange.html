@@ -4,16 +4,10 @@
 <head>
 
     <script>
-
         function handleOnChange(e) {
             console.log(e.srcElement)
-
             document.querySelector('#output').textContent = `${e.srcElement.tagName}:${e.srcElement.type}`
         }
-
-        document.querySelectorAll('#text, #checkbox').forEach(el => el.addEventListener('change', handleOnChange))
-
-
     </script>
 
     <meta charset="UTF-8" />
@@ -66,6 +60,10 @@
         <legend>output</legend>
         <div id="output"></div>
     </fieldset>
+
+    <script>
+        document.querySelectorAll('#text, #checkbox').forEach(el => el.addEventListener('change', handleOnChange))
+    </script>
 </body>
 
 </html>
